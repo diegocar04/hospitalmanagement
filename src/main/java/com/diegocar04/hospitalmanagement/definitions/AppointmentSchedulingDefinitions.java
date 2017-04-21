@@ -18,17 +18,17 @@ public class AppointmentSchedulingDefinitions {
         appointmentSchedulingSteps.openSchedulingAppointmentForm();
     }
 
-    @Given("the user enters an existing doctor <doctorId>")
+    @Given("the user enters a doctor <doctorId>")
     public void givenTheUserEntersAnExistingDoctor(@Named("doctorId") String doctorId) {
         appointmentSchedulingSteps.inputDoctorId(doctorId);
     }
 
-    @Given("the user enters an existing patient <patientId>")
+    @Given("the user enters a patient <patientId>")
     public void givenTheUserEntersAnExistingPatient(@Named("patientId") String patientId) {
         appointmentSchedulingSteps.inputPatientId(patientId);
     }
 
-    @Given("the user select a valid date <date>")
+    @Given("the user select a date <date>")
     public void whenTheUserSelectAValidDatedate(@Named("date") String date) {
         appointmentSchedulingSteps.inputAppointmentDate(date);
     }

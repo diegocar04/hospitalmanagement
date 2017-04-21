@@ -70,13 +70,19 @@ public class AppointmentSchedulingPage extends PageObject {
 
     public void validateConfirmationMessage(String message) {
         String pageTitle = "Testing Dojo";
-        boolean validatePageTitle = lblPageTitle.getText().contains(pageTitle);
-        MatcherAssert.assertThat(validatePageTitle,Is.is(Matchers.equalTo(true)));
-        MatcherAssert.assertThat(lblConfirmationMessage.getText(), Is.is(Matchers.equalTo(message)));
+        //boolean validatePageTitle = lblPageTitle.getText().contains(pageTitle);
+        //MatcherAssert.assertThat(validatePageTitle,Is.is(Matchers.equalTo(true)));
+        MatcherAssert.assertThat(lblPageTitle.getText(), Matchers.containsString(pageTitle));
+        MatcherAssert.assertThat(lblConfirmationMessage.getText(), Matchers.containsString(message));
     }
 
     public void validateAppointmentInformation(ExamplesTable appointmentData) {
         Map<String, String> appointmentInformation = appointmentData.getRows().get(0);
         MatcherAssert.assertThat(lblAppointmentDate.getText(), Is.is(Matchers.equalTo(appointmentInformation.get("date"))));
+        MatcherAssert.assertThat(lblDoctorId.getText(), Is.is(Matchers.equalTo(appointmentInformation.get("doctorId"))));
+        MatcherAssert.assertThat(lblDoctorName.getText(), Is.is(Matchers.equalTo(appointmentInformation.get("doctorName"))));
+        MatcherAssert.assertThat(lblPatientId.getText(), Is.is(Matchers.equalTo(appointmentInformation.get("patientId"))));
+        MatcherAssert.assertThat(lblPatientName.getText(), Is.is(Matchers.equalTo(appointmentInformation.get("patientName"))));
+        MatcherAssert.assertThat(lblObservations.getText(), Is.is(Matchers.equalTo(appointmentInformation.get("observations"))));
     }
 }

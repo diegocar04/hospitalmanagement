@@ -9,8 +9,6 @@ public class AppointmentSchedulingSteps extends ScenarioSteps {
 
     AppointmentSchedulingPage appointmentSchedulingPage;
 
-    static final String APP_URL = "http://automatizacion.herokuapp.com/dcardona/appointmentScheduling";
-
     @Step
     public void openSchedulingAppointmentForm() {
         this.appointmentSchedulingPage.open();
